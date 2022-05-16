@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation {
+  width: 100%;
+  min-height: 70px;
+  border-bottom: 2px solid black;
+  position: fixed;
+}
+
+.flex-display {
+  display: flex;
+}
+
+.nav-list {
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 22px  0 0 0;
+  font-size: 24px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
