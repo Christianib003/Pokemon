@@ -25,3 +25,38 @@
   text-decoration: none;
   color: black;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+  height: 15%;
+}
+
+.footerLicenseDiv {
+  width: 100%;
+  border: 1px solid;
+  
+  height: 66%;
+}
+
+.footerLicense {
+  margin: 1.5% 0 1.5% 2%
+}
+
+.footerImageDiv {
+  background-color: rgba(128, 128, 128, 0.5);
+  border: 1px solid;
+  height: 33%;
+  width: 100%;
+  margin: auto;
+}
+
+.footerImage {
+  height: 80%;
+  float: right;
+  padding: 5px;
+  transform: rotate(45deg);
+}
