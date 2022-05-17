@@ -38,12 +38,11 @@
 .footerLicenseDiv {
   width: 100%;
   border: 1px solid;
-  
   height: 66%;
 }
 
 .footerLicense {
-  margin: 1.5% 0 1.5% 2%
+  margin: 1.5% 0 1.5% 2%;
 }
 
 .footerImageDiv {
