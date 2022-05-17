@@ -1,1 +1,7 @@
-console.log('Hello World')
+import './style.css';
+
+const component = () => {
+
+};
+
+document.body.appendChild(component());

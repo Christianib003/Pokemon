@@ -11,6 +11,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Capstone',
+      template: './src/index.html',
     }),
   ],
   output: {
