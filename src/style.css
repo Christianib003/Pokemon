@@ -59,3 +59,99 @@
   padding: 5px;
   transform: rotate(45deg);
 }
+
+.mainBody {
+  position: absolute;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 50% 50%;
+  grid-column-gap: 10%;
+  padding: 10px;
+  margin: 0 3% 0 3%;
+  margin-top: 5%;
+  width: 90%;
+  height: 70%;
+}
+
+@media (max-width: 782px) {
+  .mainBody {
+    margin-top: 10%;
+  }
+}
+
+.gridDiv {
+  margin: auto;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemonImage {
+  height: 30%;
+  width: 30%;
+}
+
+.infoDiv {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  width: 80%;
+}
+
+.pokemonName {
+  margin: auto;
+}
+
+.like {
+  height: 80%;
+  margin: auto;
+}
+
+.likeCount {
+  margin-left: auto;
+  margin-right: 20%;
+  font-size: 14px;
+}
+
+.commentButton {
+  margin: auto;
+  background-color: white;
+  line-height: 18px;
+  font-weight: bold;
+  box-shadow: 2px 2px;
+  padding: 0 10px 0 10px;
+  transition-duration: 0.4s;
+}
+
+.commentButton:hover {
+  color: rgba(51, 49, 49, 0.507);
+  transform: scale(1.1);
+  border: 1px solid grey;
+}
+
+.commentButton:active {
+  transform: scale(0.9);
+}
+
+.reservationButton {
+  margin: auto;
+  background-color: white;
+  line-height: 18px;
+  font-weight: bold;
+  box-shadow: 2px 2px;
+  padding: 0 10px 0 10px;
+  transition-duration: 0.4s;
+}
+
+.reservationButton:hover {
+  color: rgba(51, 49, 49, 0.507);
+  transform: scale(1.1);
+  border: 1px solid grey;
+}
+
+.reservationButton:active {
+  transform: scale(0.9);
+}
