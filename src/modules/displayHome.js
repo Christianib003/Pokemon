@@ -48,6 +48,49 @@ const displayHome = () => {
         commentButton.classList.add('commentButton');
         commentButton.innerText = 'Comment';
 
+        commentButton.addEventListener('click', () => {
+          const popUp = document.createElement('div');
+          popUp.classList.add('pop-up');
+          popUp.innerHTML = `
+          <span class="closee" id="close"><p class="close-popUp">&times;</p></span>
+          <div class="image-holder">
+              <img src="${commentButton.previousElementSibling.previousElementSibling.previousElementSibling.src}" alt="" class="popUp-image">
+          </div>
+          <h2 class="popUp-title">${pokemon.name}</h2>
+          <div class="properties-holder">
+              <div class="properties properties-left">
+                  <p class="property property-one">Fuel: 2000</p>
+                  <p class="property property-two">Weight: 2000</p>
+              </div>
+              <div class="properties properties-right">
+                  <p class="property property-one">Lenght: 2000</p>
+                  <p class="property property-two">Power: 2000</p>
+              </div>
+          </div>
+          <h3 class="comment-title">Comments(10)</h3>
+          <div class="comments-holder">
+              <p class="comment comment-one">Helelele</p>
+              <p class="comment comment-one">Helelele</p>
+          </div>
+          <h3 class="addComment-title">Add comment</h3>
+          <form class="addComment-form" id="comment-form">
+              <input type="text" class="name" id="name" placeholder="Your Name" required>
+              <textarea id="message" cols="30" rows="5" class="message" placeholder="Your insights" required></textarea>
+              <button type="button" id="add-comment" class="add-comment">Add comment</button>
+          </form>
+          `;
+          document.body.appendChild(popUp);
+          popUp.style.display = 'block';
+
+          document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('close-popUp')) {
+              const popUp = document.querySelector('.pop-up');
+              popUp.style.display = 'none';
+              window.location.reload();
+            }
+          });
+        });
+
         const reservationButton = document.createElement('button');
         reservationButton.classList.add('reservationButton');
         reservationButton.innerText = 'Reservation';
