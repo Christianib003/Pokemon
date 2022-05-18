@@ -10,6 +10,7 @@ import addLike from './addLike.js';
 import fetchLikes from './fetchLikes.js';
 
 const pokemonImages = [Image1, Image2, Image3, Image4, Image5, Image6];
+
 let loop = 0 - 1;
 
 const displayHome = () => {
@@ -40,7 +41,9 @@ const displayHome = () => {
         like.classList.add('like');
         like.addEventListener('click', () => {
           addLike(pokemonName.innerText);
-          
+          setInterval(() => {
+            window.location.reload();
+          }, 500);
         });
 
         const likeCount = document.createElement('p');
