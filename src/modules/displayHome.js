@@ -6,6 +6,8 @@ import Image3 from '../images/dinasaur.jpg';
 import Image4 from '../images/jigglypuff.jpg';
 import Image5 from '../images/teddybear.jpg';
 import Image6 from '../images/teddybear2.jpg';
+import addLike from './addLike.js';
+import fetchLikes from './fetchLikes.js';
 
 const pokemonImages = [Image1, Image2, Image3, Image4, Image5, Image6];
 let loop = 0 - 1;
@@ -36,9 +38,17 @@ const displayHome = () => {
         const like = document.createElement('img');
         like.src = Like;
         like.classList.add('like');
+        like.addEventListener('click', () => {
+          addLike(pokemonName.innerText);
+          
+        });
 
         const likeCount = document.createElement('p');
-        likeCount.innerText = '5 Likes';
+        fetchLikes()
+          .then((response) => {
+            const pokemonObject = (response.find((o) => o.item_id === pokemonName.innerText));
+            likeCount.innerText = `${pokemonObject.likes} likes`;
+          });
         likeCount.classList.add('likeCount');
 
         infoDiv.appendChild(pokemonName);
