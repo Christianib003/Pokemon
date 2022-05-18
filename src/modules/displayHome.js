@@ -80,15 +80,16 @@ const displayHome = () => {
           </form>
           `;
           document.body.appendChild(popUp);
-          popUp.style.display= 'block';
+          popUp.style.display = 'block';
 
           document.addEventListener('click', (e) => {
-            if(e.target.classList.contains('close-popUp')) {
+            if (e.target.classList.contains('close-popUp')) {
               const popUp = document.querySelector('.pop-up');
               popUp.style.display = 'none';
               window.location.reload();
-          }})
-        })
+            }
+          });
+        });
 
         const reservationButton = document.createElement('button');
         reservationButton.classList.add('reservationButton');
