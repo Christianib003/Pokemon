@@ -48,26 +48,13 @@ const displayHome = () => {
         commentButton.classList.add('commentButton');
         commentButton.innerText = 'Comment';
 
-        const reservationButton = document.createElement('button');
-        reservationButton.classList.add('reservationButton');
-        reservationButton.innerText = 'Reservation';
-
-        gridDiv1.appendChild(image);
-        gridDiv1.appendChild(infoDiv);
-        gridDiv1.appendChild(likeCount);
-        gridDiv1.appendChild(commentButton);
-        gridDiv1.appendChild(reservationButton);
-
-        mainBody.appendChild(gridDiv1);
-        document.body.appendChild(mainBody);
-
         commentButton.addEventListener('click', () => {
           const popUp = document.createElement('div');
           popUp.classList.add('pop-up');
           popUp.innerHTML = `
           <span class="closee" id="close"><p class="close-popUp">&times;</p></span>
           <div class="image-holder">
-              <img src="${pokemonImages[loop]}" alt="" class="popUp-image">
+              <img src="${commentButton.previousElementSibling.previousElementSibling.previousElementSibling.src}" alt="" class="popUp-image">
           </div>
           <h2 class="popUp-title">${pokemon.name}</h2>
           <div class="properties-holder">
@@ -94,14 +81,28 @@ const displayHome = () => {
           `;
           document.body.appendChild(popUp);
           popUp.style.display= 'block';
+
+          document.addEventListener('click', (e) => {
+            if(e.target.classList.contains('close-popUp')) {
+              const popUp = document.querySelector('.pop-up');
+              popUp.style.display = 'none';
+              window.location.reload();
+          }})
         })
+
+        const reservationButton = document.createElement('button');
+        reservationButton.classList.add('reservationButton');
+        reservationButton.innerText = 'Reservation';
+
+        gridDiv1.appendChild(image);
+        gridDiv1.appendChild(infoDiv);
+        gridDiv1.appendChild(likeCount);
+        gridDiv1.appendChild(commentButton);
+        gridDiv1.appendChild(reservationButton);
+
+        mainBody.appendChild(gridDiv1);
+        document.body.appendChild(mainBody);
       });
-      
-       document.addEventListener('click', (e) => {
-        if(e.target.classList.contains('close-popUp')) {
-          const popUp = document.querySelector('.pop-up');
-          popUp.style.display = 'none';
-      }})
     });
 };
 
