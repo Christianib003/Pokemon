@@ -4,4 +4,4 @@ const fetchLikes = async () => {
   return results;
 };
 
-export default fetchLikes
+export default fetchLikes;

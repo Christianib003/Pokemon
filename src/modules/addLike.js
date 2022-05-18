@@ -7,6 +7,6 @@ const addLike = async (pokemonName) => {
     headers: { 'Content-Type': 'application/json' },
     body: values,
   });
-}
+};
 
 export default addLike;
