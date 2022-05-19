@@ -124,6 +124,8 @@ const displayHome = () => {
             };
             postComment(body).then(() => {
               retrieveComments(pokename);
+              document.getElementById('name').value = '';
+              document.getElementById('message').value = '';
             });
           });
 
