@@ -128,6 +128,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst addLike = async (pokemonName) => {\r\n  const values = JSON.stringify({\r\n    item_id: pokemonName,\r\n  });\r\n  await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/TV7hTpGuCrnTLj903g8c/likes/', {\r\n    method: 'POST',\r\n    headers: { 'Content-Type': 'application/json' },\r\n    body: values,\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addLike);\n\n//# sourceURL=webpack://capston-project-ii/./src/modules/addLike.js?");
 
+
 /***/ }),
 
 /***/ "./src/modules/displayHome.js":
@@ -156,7 +157,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst fetchPokemon = async () => {\r\n  const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=6&limit=6');\r\n  const results = await response.json();\r\n  return results.results;\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fetchPokemon);\n\n//# sourceURL=webpack://capston-project-ii/./src/modules/fetchPokemon.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst fetchPokemon = async () => {\n  const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=6&limit=6');\n  const results = await response.json();\n  return results.results;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fetchPokemon);\n\n//# sourceURL=webpack://capston-project-ii/./src/modules/fetchPokemon.js?");
 
 /***/ }),
 
