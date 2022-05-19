@@ -8,8 +8,7 @@ import Image5 from '../images/teddybear.jpg';
 import Image6 from '../images/teddybear2.jpg';
 import addLike from './addLike.js';
 import fetchLikes from './fetchLikes.js';
-import { postComment } from './comments';
-import { allComments } from './comments';
+import { postComment, allComments } from './comments.js';
 
 const pokemonImages = [Image1, Image2, Image3, Image4, Image5, Image6];
 
@@ -62,24 +61,21 @@ const displayHome = () => {
         const commentButton = document.createElement('button');
         commentButton.classList.add('commentButton');
         commentButton.innerText = 'Comment';
-        const createCommentTag = (commentItem)=>{
-          const paragraph = document.createElement("p");
-          paragraph.innerText = commentItem['creation_date'] + ' : ' + commentItem['username'] + ' : ' + commentItem['comment'];
+        const createCommentTag = (commentItem) => {
+          const paragraph = document.createElement('p');
+          paragraph.innerText = `${commentItem.creation_date} : ${commentItem.username} : ${commentItem.comment}`;
           return paragraph;
-        }
-        const retrieveComments = (item_id)=>{
+        };
+        const retrieveComments = (item_id) => {
           allComments(item_id)
-          .then( res =>{
-            document.getElementById("comment-title").innerText = `comments(${res.length? res.length: 0})`;
-            document.getElementById("comments-holder").innerHTML='';
-            res.map( commentItem =>(
-              document.getElementById("comments-holder").appendChild(createCommentTag(commentItem))
-            ))
-            
-            
-          })
-          
-        }
+            .then((res) => {
+              document.getElementById('comment-title').innerText = `comments(${res.length ? res.length : 0})`;
+              document.getElementById('comments-holder').innerHTML = '';
+              res.map((commentItem) => (
+                document.getElementById('comments-holder').appendChild(createCommentTag(commentItem))
+              ));
+            });
+        };
 
         commentButton.addEventListener('click', () => {
           const popUp = document.createElement('div');
@@ -115,22 +111,21 @@ const displayHome = () => {
           popUp.style.display = 'block';
 
           const form = document.getElementById('comment-form');
-          form.addEventListener('submit', (event)=>{
+          form.addEventListener('submit', (event) => {
             event.preventDefault();
             const pokename = document.getElementById('pop-up-title').innerText;
 
             const username = document.getElementById('name').value;
             const message = document.getElementById('message').value;
-            const body ={              
+            const body = {
               item_id: pokename,
               comment: message,
               username,
-            }
-            postComment(body).then( res=>{
-              alert("comment added successfully!");
+            };
+            postComment(body).then(() => {
+              retrieveComments(pokename);
             });
-            retrieveComments(pokename);
-          })
+          });
 
           document.addEventListener('click', (e) => {
             if (e.target.classList.contains('close-popUp')) {
