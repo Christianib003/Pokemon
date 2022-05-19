@@ -1,11 +1,11 @@
 import './style.css';
 import displayHome from './modules/displayHome.js';
-import pokemonCounter from './modules/pokemonCounter';
+import pokemonCounter from './modules/pokemonCounter.js';
 
 const component = () => {
   displayHome();
   setTimeout(() => {
-    const pokemonCount = document.querySelectorAll('.gridDiv').length
+    const pokemonCount = document.querySelectorAll('.gridDiv').length;
     const element = document.getElementById('nav-li2');
     pokemonCounter(pokemonCount, element);
   }, 500);
