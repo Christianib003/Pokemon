@@ -8,6 +8,8 @@ import Image5 from '../images/teddybear.jpg';
 import Image6 from '../images/teddybear2.jpg';
 import addLike from './addLike.js';
 import fetchLikes from './fetchLikes.js';
+import { postComment } from './comments';
+import { allComments } from './comments';
 
 const pokemonImages = [Image1, Image2, Image3, Image4, Image5, Image6];
 
@@ -60,6 +62,24 @@ const displayHome = () => {
         const commentButton = document.createElement('button');
         commentButton.classList.add('commentButton');
         commentButton.innerText = 'Comment';
+        const createCommentTag = (commentItem)=>{
+          const paragraph = document.createElement("p");
+          paragraph.innerText = commentItem['creation_date'] + ' : ' + commentItem['username'] + ' : ' + commentItem['comment'];
+          return paragraph;
+        }
+        const retrieveComments = (item_id)=>{
+          allComments(item_id)
+          .then( res =>{
+            document.getElementById("comment-title").innerText = `comments(${res.length? res.length: 0})`;
+            document.getElementById("comments-holder").innerHTML='';
+            res.map( commentItem =>(
+              document.getElementById("comments-holder").appendChild(createCommentTag(commentItem))
+            ))
+            
+            
+          })
+          
+        }
 
         commentButton.addEventListener('click', () => {
           const popUp = document.createElement('div');
@@ -69,7 +89,7 @@ const displayHome = () => {
           <div class="image-holder">
               <img src="${commentButton.previousElementSibling.previousElementSibling.previousElementSibling.src}" alt="" class="popUp-image">
           </div>
-          <h2 class="popUp-title">${pokemon.name}</h2>
+          <h2 class="popUp-title" id="pop-up-title">${pokemon.name}</h2>
           <div class="properties-holder">
               <div class="properties properties-left">
                   <p class="property property-one">Fuel: 2000</p>
@@ -80,20 +100,37 @@ const displayHome = () => {
                   <p class="property property-two">Power: 2000</p>
               </div>
           </div>
-          <h3 class="comment-title">Comments(10)</h3>
-          <div class="comments-holder">
-              <p class="comment comment-one">Helelele</p>
-              <p class="comment comment-one">Helelele</p>
+          <h3 class="comment-title" id="comment-title"> ${retrieveComments(pokemon.name)}</h3>
+          <div class="comments-holder" id="comments-holder">
+              
           </div>
           <h3 class="addComment-title">Add comment</h3>
           <form class="addComment-form" id="comment-form">
               <input type="text" class="name" id="name" placeholder="Your Name" required>
               <textarea id="message" cols="30" rows="5" class="message" placeholder="Your insights" required></textarea>
-              <button type="button" id="add-comment" class="add-comment">Add comment</button>
+              <button type="submit" id="add-comment" class="add-comment">Add comment</button>
           </form>
           `;
           document.body.appendChild(popUp);
           popUp.style.display = 'block';
+
+          const form = document.getElementById('comment-form');
+          form.addEventListener('submit', (event)=>{
+            event.preventDefault();
+            const pokename = document.getElementById('pop-up-title').innerText;
+
+            const username = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            const body ={              
+              item_id: pokename,
+              comment: message,
+              username,
+            }
+            postComment(body).then( res=>{
+              alert("comment added successfully!");
+            });
+            retrieveComments(pokename);
+          })
 
           document.addEventListener('click', (e) => {
             if (e.target.classList.contains('close-popUp')) {

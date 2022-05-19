@@ -196,6 +196,8 @@
 .comments-holder {
   width: 70%;
   margin: auto;
+  height: 38px;
+  overflow-y: hidden;
 }
 
 .addComment-title {
