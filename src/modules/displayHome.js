@@ -51,18 +51,16 @@ const displayHome = () => {
         like.classList.add('like');
         like.addEventListener('click', () => {
           addLike(pokemonName.innerText);
-          const myMethod = () => { 
+          const myMethod = () => {
             fetchLikes()
               .then((response) => {
                 const pokemonObject = (response.find((o) => o.item_id === pokemonName.innerText));
                 likeCount.innerText = '';
                 likeCount.innerText = `${pokemonObject.likes} likes`;
-            });
-          }
+              });
+          };
           setTimeout(myMethod, 500);
         });
-
-        
 
         infoDiv.appendChild(pokemonName);
         infoDiv.appendChild(like);
@@ -78,7 +76,7 @@ const displayHome = () => {
         const retrieveComments = (item_id) => {
           allComments(item_id)
             .then((res) => {
-              res.sort((a, b)=> (a.creation_date < b.creation_date ? 1 : -1));
+              res.sort((a, b) => (a.creation_date < b.creation_date ? 1 : -1));
               document.getElementById('comment-title').innerText = commentCounter(res);
               document.getElementById('comments-holder').innerHTML = '';
               res.map((commentItem) => (
