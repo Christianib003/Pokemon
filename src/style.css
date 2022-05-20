@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation {
+  width: 100%;
+  min-height: 50px;
+  border-bottom: 2px solid black;
+  position: fixed;
+}
+
+.flex-display {
+  display: flex;
+}
+
+.nav-list {
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 12px  0 0 0;
+  font-size: 24px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+  height: 15%;
+}
+
+.footerLicenseDiv {
+  width: 100%;
+  border: 1px solid;
+  height: 66%;
+}
+
+.footerLicense {
+  margin: 1.5% 0 1.5% 2%;
+}
+
+.footerImageDiv {
+  background-color: rgba(128, 128, 128, 0.5);
+  border: 1px solid;
+  height: 33%;
+  width: 100%;
+  margin: auto;
+}
+
+.footerImage {
+  height: 80%;
+  float: right;
+  padding: 5px;
+  transform: rotate(45deg);
+}
+
+.mainBody {
+  position: absolute;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 50% 50%;
+  grid-column-gap: 10%;
+  padding: 10px;
+  margin: 0 3% 0 3%;
+  margin-top: 5%;
+  width: 90%;
+  height: 70%;
+}
+
+@media (max-width: 782px) {
+  .mainBody {
+    margin-top: 10%;
+  }
+}
+
+.gridDiv {
+  margin: auto;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemonImage {
+  height: 30%;
+  width: 30%;
+}
+
+.infoDiv {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  width: 80%;
+}
+
+.pokemonName {
+  margin: auto;
+}
+
+.like {
+  height: 80%;
+  margin: auto;
+}
+
+.likeCount {
+  margin-left: auto;
+  margin-right: 20%;
+  font-size: 14px;
+}
+
+.commentButton {
+  margin: auto;
+  background-color: white;
+  line-height: 18px;
+  font-weight: bold;
+  box-shadow: 2px 2px;
+  padding: 0 10px 0 10px;
+  transition-duration: 0.4s;
+}
+
+.commentButton:hover {
+  color: rgba(51, 49, 49, 0.507);
+  transform: scale(1.1);
+  border: 1px solid grey;
+}
+
+.commentButton:active {
+  transform: scale(0.9);
+}
+
+.reservationButton {
+  margin: auto;
+  background-color: white;
+  line-height: 18px;
+  font-weight: bold;
+  box-shadow: 2px 2px;
+  padding: 0 10px 0 10px;
+  transition-duration: 0.4s;
+}
+
+.reservationButton:hover {
+  color: rgba(51, 49, 49, 0.507);
+  transform: scale(1.1);
+  border: 1px solid grey;
+}
+
+.reservationButton:active {
+  transform: scale(0.9);
+}
+
+.pop-up {
+  width: 40%;
+  margin: 60px 30% 0 30%;
+  border: 2px black solid;
+  height: 75vh;
+  position: absolute;
+  z-index: 2;
+  background-color: #fff;
+  display: none;
+}
+
+.popUp-image {
+  width: 100%;
+  height: 22vh;
+  margin: auto;
+}
+
+.image-holder {
+  margin: 20px 20% 0 20%;
+}
+
+.popUp-title {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.properties-holder {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
+}
+
+.comment-title {
+  text-align: center;
+}
+
+.comments-holder {
+  width: 70%;
+  margin: auto;
+  height: 38px;
+  overflow-y: hidden;
+}
+
+.addComment-title {
+  text-align: center;
+  margin: 0 0 6px 0;
+}
+
+.addComment-form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+}
+
+.name {
+  margin: 0 0 6px 0;
+  width: 40%;
+  padding: 0 5px 0 5px;
+  border: 2px solid black;
+}
+
+.message {
+  margin: 0 0 6px 0;
+  width: 70%;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+.add-comment {
+  width: 50%;
+  height: 30px;
+  border: 2px solid black;
+  box-shadow: 0 5px 5px 0;
+}
+
+.close-popUp {
+  font-size: 50px;
+  font-weight: bold;
+  float: right;
+  margin: 0 5% 0 0;
+}
+
+.close-popUp:hover {
+  cursor: pointer;
+}
