@@ -38,16 +38,6 @@ const displayHome = () => {
         pokemonName.innerText = pokemon.name;
         pokemonName.classList.add('pokemonName');
 
-        const like = document.createElement('img');
-        like.src = Like;
-        like.classList.add('like');
-        like.addEventListener('click', () => {
-          addLike(pokemonName.innerText);
-          setInterval(() => {
-            window.location.reload();
-          }, 500);
-        });
-
         const likeCount = document.createElement('p');
         fetchLikes()
           .then((response) => {
@@ -55,6 +45,22 @@ const displayHome = () => {
             likeCount.innerText = `${pokemonObject.likes} likes`;
           });
         likeCount.classList.add('likeCount');
+
+        const like = document.createElement('img');
+        like.src = Like;
+        like.classList.add('like');
+        like.addEventListener('click', () => {
+          addLike(pokemonName.innerText);
+          const myMethod = () => {
+            fetchLikes()
+              .then((response) => {
+                const pokemonObject = (response.find((o) => o.item_id === pokemonName.innerText));
+                likeCount.innerText = '';
+                likeCount.innerText = `${pokemonObject.likes} likes`;
+              });
+          };
+          setTimeout(myMethod, 500);
+        });
 
         infoDiv.appendChild(pokemonName);
         infoDiv.appendChild(like);
