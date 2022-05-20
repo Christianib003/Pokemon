@@ -29,17 +29,18 @@ npm run build
 
 
 
-## Author
+## Author 1
 🧑  **Simba Eugene**
 
 - GitHub: [@SimbaWANGU](https://github.com/SimbaWANGU)
 - Twitter: [@simb_erella](https://twitter.com/simb_erella)
 - LinkedIn: [Simba Wangulu](https://www.linkedin.com/in/simba-wangulu/)
 
+## Author 2
 👤 **Christian Iradukunda**
 
-GitHub: [@githubhandle](https://github.com/Christianib003)
-LinkedIn: [LinkedIn](https://www.linkedin.com/in/christian-iradukunda-byiringiro-657598226)
+- GitHub: [@githubhandle](https://github.com/Christianib003)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/christian-iradukunda-byiringiro-657598226)
 
 
 ## 🤝 Contributing
