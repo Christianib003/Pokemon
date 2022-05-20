@@ -9,6 +9,7 @@ import Image6 from '../images/teddybear2.jpg';
 import addLike from './addLike.js';
 import fetchLikes from './fetchLikes.js';
 import { postComment, allComments } from './comments.js';
+import commentCounter from './commentCounter.js';
 
 const pokemonImages = [Image1, Image2, Image3, Image4, Image5, Image6];
 
@@ -69,7 +70,8 @@ const displayHome = () => {
         const retrieveComments = (item_id) => {
           allComments(item_id)
             .then((res) => {
-              document.getElementById('comment-title').innerText = `comments(${res.length ? res.length : 0})`;
+              res.sort((a, b) => (a.creation_date < b.creation_date ? 1 : -1));
+              document.getElementById('comment-title').innerText = commentCounter(res);
               document.getElementById('comments-holder').innerHTML = '';
               res.map((commentItem) => (
                 document.getElementById('comments-holder').appendChild(createCommentTag(commentItem))
