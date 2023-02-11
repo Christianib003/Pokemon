@@ -1,13 +1,13 @@
 {
   "name": "capston-project-ii",
   "version": "1.0.0",
-   "homepage": "https://Christianib003.github.io/Pokemon",
+  "homepage": "https://Christianib003.github.io/Pokemon",
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "main": "index.js",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "webpack",
+    "build": "react-scripts build",
     "start": "webpack serve --open",
     "test": "jest"
   },
@@ -54,5 +54,17 @@
   "jest": {
     "resetMocks": false,
     "testEnvironment": "jsdom"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

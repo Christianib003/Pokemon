@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Pokemon/static/css/main.782f232a.css",
+    "main.js": "/Pokemon/static/js/main.c84eae79.js",
+    "static/media/pikachu.jpeg": "/Pokemon/static/media/pikachu.aa459acbaa779eab8a78.jpeg",
+    "static/media/teddybear.jpg": "/Pokemon/static/media/teddybear.83b8f539818813f63d85.jpg",
+    "static/media/jigglypuff.jpg": "/Pokemon/static/media/jigglypuff.181f317fb4e490e1e0ea.jpg",
+    "static/media/dinasaur.jpg": "/Pokemon/static/media/dinasaur.4cbb1e7d251b8d208d68.jpg",
+    "static/media/teddybear2.jpg": "/Pokemon/static/media/teddybear2.886cd1519427730179dd.jpg",
+    "static/media/heart.png": "/Pokemon/static/media/heart.c412cbaead4744166c20.png",
+    "index.html": "/Pokemon/index.html",
+    "main.782f232a.css.map": "/Pokemon/static/css/main.782f232a.css.map",
+    "main.c84eae79.js.map": "/Pokemon/static/js/main.c84eae79.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.782f232a.css",
+    "static/js/main.c84eae79.js"
+  ]
+}
